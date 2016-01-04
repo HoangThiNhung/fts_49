@@ -1,0 +1,69 @@
+<% provide :title, t(".title") %>
+<div class="container">
+  <div class="row">
+    <%= form_for @exam do |f| %>
+      <div class="col-md-4">
+        <%= f.collection_select :subject_id, @subjects, :id, :name, {},
+          class: "form-control" %>
+        <%= f.hidden_field :duration, value: 20 %>
+        <%= f.hidden_field :status, value: :start %>
+      </div>
+      <div class="col-md-3">
+        <%= f.submit t(".create_exam"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  <hr>
+  <div class="row">
+    <h3><%= t ".list_exam" %></h3>
+    <table class="table table-condensed">
+      <tr>
+        <td><%= t ".created_date" %></td>
+        <td><%= t ".subject" %></td>
+        <td><%= t ".status" %></td>
+        <td><%= t ".duration" %></td>
+        <td><%= t ".question_number" %></td>
+        <td><%= t ".spent_time" %></td>
+        <td><%= t ".scope" %></td>
+        <td></td>
+      </tr>
+      <% @exams.each do |exam| %>
+        <tr>
+          <td><%= exam.created_at %></td>
+          <td><%= exam.subject.name %></td>
+          <td>
+            <% if exam.start? %>
+              <span class="label label-primary"><%= exam.status %></span>
+            <% elsif exam.testing? %>
+              <span class="label label-warning"><%= exam.status %></span>
+            <% else %>
+              <span class="label label-info"><%= exam.status %></span>
+            <% end %>
+          </td>
+          <td><%= exam.duration %></td>
+          <td><%= exam.number_question %></td>
+          <td>
+            <% if exam.start? %>
+              00:00:00
+            <% else %>
+              <%= convert_time exam %>
+            <% end %>
+          </td>
+          <td>
+            <% if exam.start? or exam.unchecked? %>
+              -
+            <% elsif exam.testing? %>
+              0/<%= exam.questions.size %>
+            <% else %>
+              <%= exam.results.correct_answer.size %>/<%= exam.questions.size %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to exam.start? ? t(".start") : t(".view"), exam,
+              class: "btn btn-primary" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
