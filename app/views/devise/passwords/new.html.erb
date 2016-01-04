@@ -1,0 +1,20 @@
+<% provide :title, t("users.forget_password") %>
+<h2><%= t "users.forget_password" %></h2>
+<div class="col-md-6 col-md-offset-3">
+  <%= form_for resource, as: resource_name, url: password_path(resource_name),
+    html: {method: :post} do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, class: "form_control" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit t("users.sent_resset_password_mail") %>
+    </div>
+  <% end %>
+</div>
+<div class="col-md-6 col-md-offset-3">
+  <%= render "devise/shared/links" %>
+</div>

@@ -1,0 +1,41 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$gray-medium-light: #eaeaea;
+$gray-light: #777;
+$gray: #555;
+$gray-darker: #222;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+#sign_in {
+  h2 {
+    font-size: 36px;
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#sign_up {
+  h2 {
+    font-sign: 36px;
+  }
+
+  .actions {
+    padding-top: 10px;
+  }
+  
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
