@@ -68,7 +68,10 @@ en:
       wrong: "Wrong answer"
       result: "Exam result :"
   question:
+    content: "content"
     options: "options"
+    correct: "correct"
+    wrong: "wrong"
     correct_answer: "Correct answer"
     remove: "remove"
     add_option: "Add more options"
@@ -89,3 +92,6 @@ en:
   message:
     the_form_contains: "The form contains"
     errors: "errors"
+  action:
+    edit: "Edit"
+    delete: "Delete"

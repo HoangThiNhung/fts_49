@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1><%= t "question.question" %></h1>
+    <table class="table">
+      <tr>
+        <td><%= t "question.content" %></td>
+        <td><%= @question.content %></td>
+      </tr>
+      <tr>
+        <td><%= t "question.options" %></td>
+        <td>
+          <% if @options.any? %>
+            <%= render @options %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= t "question.subject" %></td>
+        <td><%= @question.subject.name %> </td>
+      </tr>
+      <tr>
+        <td><%= t "questions.type" %></td>
+        <td><%= @question.question_type %></td>
+      </tr>
+      <tr>
+        <td><%= t "question.state" %></td>
+        <td>
+          <% if @question.waitting? %>
+            <p class="btn btn-warning"><%= @question.status %></p>
+          <% else %>
+            <p class="btn btn-success"> <%= @question.status %> </p>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+    <%= link_to t("action.edit"), "#", class: "btn btn-primary" %>
+    <%= link_to t("action.delete"), "#", class: "btn btn-danger" %>
+  </div>
+</div>
