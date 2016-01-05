@@ -1,7 +1,7 @@
 class ExamsController < ApplicationController
   before_action :check_subject, only: [:create]
   before_action :authenticate_user!
-  before_action :load_exam, only: [:show]
+  before_action :load_exam, only: [:show, :update]
 
   def index
     @exam = Exam.new
@@ -28,6 +28,16 @@ class ExamsController < ApplicationController
     redirect_to exams_path
   end
 
+  def update
+    @exam.time_end = Time.now.to_i
+    if @exam.update_attributes exam_params
+      flash[:success] = t "flash.save_question"
+    else
+      flash[:danger] =  t "flash.save_question_failed"
+    end
+    redirect_to exams_path
+  end
+
   private
   def check_subject
     @subject = Subject.find params[:exam][:subject_id]
@@ -38,7 +48,8 @@ class ExamsController < ApplicationController
   end
 
   def exam_params
-    params.require(:exam).permit :subject_id, :duration, :status
+    params.require(:exam).permit :subject_id, :duration, :status,
+      results_attributes: [:id, :option_id]
   end
 
   def load_exam

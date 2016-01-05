@@ -11,6 +11,8 @@ en:
   flash:
     create_exam_success: "Create exam success"
     create_exam_failed: "Create exam failed"
+    save_question: "Your answer sheet has been submitted"
+    save_question_failed: "Failed save "
   static_page:
     home:
       welcome: "Welcome to the FTS49 system"
