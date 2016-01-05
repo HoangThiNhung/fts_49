@@ -1,0 +1,5 @@
+questions:
+  type:
+    single_choice: "single_choice"
+    multiple_choice: "multiple_choice"
+    text: "text"

@@ -35,12 +35,12 @@ ActiveRecord::Schema.define(version: 20160104011237) do
 
   create_table "questions", force: :cascade do |t|
     t.string   "content"
-    t.string   "status"
-    t.integer  "question_type"
+    t.string   "status",        default: "waitting"
+    t.string   "question_type"
     t.integer  "user_id"
     t.integer  "subject_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "results", force: :cascade do |t|
