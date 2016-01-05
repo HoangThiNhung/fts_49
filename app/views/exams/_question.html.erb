@@ -8,4 +8,11 @@
     </label>
   <% end %>
 </div>
+<% if f.object.exam.checked? %>
+  <% if f.object.option.is_correct %>
+    <span class="label label-primary"><%= t "exams.show.correct" %></span>
+  <% else %>
+    <span class="label label-danger"><%= t "exams.show.wrong" %></span>
+  <% end %>
+<% end %>
 <br>

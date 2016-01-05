@@ -1,5 +1,14 @@
 <div class="row">
   <p><%= @exam.created_at %></p>
+  <% if @exam.checked? %>
+    <p>
+      <%= t ".result" %>
+      <span class="show_score">
+        <%= @exam.results.correct_answer.size %>/
+        <%= @exam.questions.size %>
+      </span>
+    </p>
+  <% end %>
   <h1><%= @exam.subject.name %></h1>
 </div>
 <hr>
