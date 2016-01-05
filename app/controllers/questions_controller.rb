@@ -1,9 +1,15 @@
 class QuestionsController < ApplicationController
   before_action :load_subjects, only: [:index, :new, :create]
+  before_action :correct_user, only: :show
   before_action :authenticate_user!
   
   def index
-    @questions = current_user.questions.paginate page: params[:page]
+    @questions = current_user.questions.page(params[:page]).per 5
+  end
+
+  def show
+    @question = Question.find params[:id]
+    @options = @question.options
   end
 
   def new
@@ -30,5 +36,10 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit :content, :subject_id, :question_type, 
      options_attributes: [:id, :content, :is_correct]
+  end
+
+  def correct_user
+    @question = current_user.questions.find_by id: params[:id]
+    redirect_to root_url if @question.nil?
   end
 end

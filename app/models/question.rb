@@ -1,4 +1,7 @@
 class Question < ActiveRecord::Base
+
+  enum status: [:waitting, :accepted]
+
   has_many :options, dependent: :destroy
   belongs_to :subject
   belongs_to :user

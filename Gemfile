@@ -9,9 +9,8 @@ gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "devise"
 gem "bootstrap-sass",       "3.2.0.0"
-gem "will_paginate",           "3.0.7"
-gem "bootstrap-will_paginate", "0.0.10"
 gem "config"
+gem "kaminari", "~> 0.16.1"
 
 group :development, :test do
   gem "factory_girl_rails"
