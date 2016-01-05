@@ -1,0 +1,11 @@
+<div class="row">
+  <li><strong><%= f.object.question.content %></strong></li>
+  <% f.object.question.options.each do |option| %>
+    <label class="radio">
+      <%= f.radio_button :option_id, option.id,
+        disabled: !f.object.exam.testing? %>
+      <%= option.content %>
+    </label>
+  <% end %>
+</div>
+<br>

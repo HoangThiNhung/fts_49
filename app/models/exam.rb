@@ -14,6 +14,8 @@ class Exam < ActiveRecord::Base
   before_create :add_questions
   before_validation :set_number_of_question
 
+  accepts_nested_attributes_for :results
+
   private
   def add_questions
     self.questions = subject.questions.accepted.order("RANDOM()").

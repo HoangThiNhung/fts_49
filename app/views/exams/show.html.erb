@@ -1,0 +1,29 @@
+<div class="row">
+  <p><%= @exam.created_at %></p>
+  <h1><%= @exam.subject.name %></h1>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <%= form_for @exam do |f| %>
+      <ol>
+        <%= f.fields_for :results do |result| %>
+          <%= render "question", f: result %>
+        <% end %>
+      </ol>
+      <% if @exam.testing? %>
+        <%= f.submit t(".save"), class: "btn btn-danger col-md-3 pull-left" %>
+        <%= f.submit t(".finish"), class: "btn btn-primary col-md-3 pull-right",
+          id: "finish" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-md-2 col-md-offset-1">
+    <div class="timer">
+      <h4><%= t ".time_remain" %></h4>
+      <p id="clock" data-time-limit="<%= @exam.duration %>"
+       data-time-start="<%= @time_start %>"
+       data-time-now="<%= Time.now.to_i %>"></p>
+    </div>
+  </div>
+</div>

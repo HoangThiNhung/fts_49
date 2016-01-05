@@ -1,11 +1,21 @@
 class ExamsController < ApplicationController
   before_action :check_subject, only: [:create]
   before_action :authenticate_user!
+  before_action :load_exam, only: [:show]
 
   def index
     @exam = Exam.new
     @exams = current_user.exams.order "created_at DESC"
     @subjects = Subject.all
+  end
+
+  def show
+    if @exam.start?
+      @time_start = Time.now.to_i
+      @exam.update_attributes time_start: @time_start, status: :testing
+    else
+      @time_start = @exam.time_start
+    end
   end
 
   def create
@@ -29,5 +39,9 @@ class ExamsController < ApplicationController
 
   def exam_params
     params.require(:exam).permit :subject_id, :duration, :status
+  end
+
+  def load_exam
+    @exam = Exam.find params[:id]
   end
 end

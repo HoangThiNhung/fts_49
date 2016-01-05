@@ -13,6 +13,9 @@ gem "will_paginate",           "3.0.7"
 gem "bootstrap-will_paginate", "0.0.10"
 
 group :development, :test do
+  gem "factory_girl_rails"
+  gem "faker"
+  gem "rspec-rails"
   gem "sqlite3"
   gem "byebug"
 end
