@@ -1,11 +1,12 @@
 $(document).on("ready page:load",function(){
   var clock = $("#clock")
+  var status = clock.attr("data-status")
   var time_limit = clock.attr("data-time-limit")
   var time_start = clock.attr("data-time-start")
   var time_now = clock.attr("data-time-now")
   var time = time_limit * 60 - (time_now - time_start)
   setInterval(function(){
-    if (time > 0){
+    if (time > 0 && status != "unchecked" && status != "checked"){
       var c = time--
       var h = c / 3600 >> 0
       if (h.toString().length > 1){
@@ -27,6 +28,9 @@ $(document).on("ready page:load",function(){
       }
       clock.text(hour + ":" + min + ":" + sec);
     }else{
+      if(status == "testing"){
+        $("#finish").click();
+      }
       clock.text("00:00:00");
     }
    }, 1000);

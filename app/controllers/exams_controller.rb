@@ -30,6 +30,7 @@ class ExamsController < ApplicationController
 
   def update
     @exam.time_end = Time.now.to_i
+    @exam.status = :unchecked if params[:commit] == "Finish"
     if @exam.update_attributes exam_params
       flash[:success] = t "flash.save_question"
     else
