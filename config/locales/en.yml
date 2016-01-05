@@ -90,6 +90,7 @@ en:
     sugesst_question: "Suggest Question"
     notice:
       create_success: "Create Question Success"
+      delete_success: "Delete Success"
     type:
       single_choice: "Single choice"
       multiple_choice: "Multiple choice"
