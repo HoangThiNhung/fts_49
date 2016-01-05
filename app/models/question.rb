@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
-
+  resourcify
+  
   enum status: [:waitting, :accepted]
 
   has_many :options, dependent: :destroy
