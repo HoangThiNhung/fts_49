@@ -58,3 +58,7 @@ en:
       spent_time: "Spend time"
       start: "Start"
       view: "View"
+    show:
+      save: "Save"
+      finish: "Finish"
+      time_remain: "Time remain"

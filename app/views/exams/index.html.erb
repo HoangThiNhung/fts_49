@@ -43,7 +43,7 @@
           <td><%= exam.duration %></td>
           <td><%= exam.number_question %></td>
           <td>
-            <% if exam.start? %>
+            <% if exam.start? or exam.time_end.nil? %>
               00:00:00
             <% else %>
               <%= convert_time exam %>
