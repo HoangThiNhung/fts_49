@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "static_page#home"
   get "static_page/about"
   resources :exams
+  resources :questions
 end

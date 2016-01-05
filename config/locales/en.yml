@@ -64,3 +64,25 @@ en:
       save: "Save"
       finish: "Finish"
       time_remain: "Time remain"
+  question:
+    options: "options"
+    correct_answer: "Correct answer"
+    remove: "remove"
+    add_option: "Add more options"
+    sugesst: "Sugesst"
+    answer: "answer"
+    stt: "STT"
+    question: "Question"
+    subject: "Subject"
+    type: "Type"
+    state: "State"
+    sugesst_question: "Suggest Question"
+    notice:
+      create_success: "Create Question Success"
+    type:
+      single_choice: "Single choice"
+      multiple_choice: "Multiple choice"
+      text: "Text"
+  message:
+    the_form_contains: "The form contains"
+    errors: "errors"
