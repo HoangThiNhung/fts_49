@@ -57,13 +57,16 @@ en:
       duration: "Duration"
       question_number: "Question number"
       scope: "Scope"
-      spent_time: "Spend time"
+      spent_time: "Spent time"
       start: "Start"
       view: "View"
     show:
       save: "Save"
       finish: "Finish"
       time_remain: "Time remain"
+      correct: "Correct answer"
+      wrong: "Wrong answer"
+      result: "Exam result :"
   question:
     options: "options"
     correct_answer: "Correct answer"

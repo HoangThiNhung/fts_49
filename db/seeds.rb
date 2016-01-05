@@ -13,5 +13,3 @@
     FactoryGirl.create(:option,question: @question)
   end
 end
-
-
