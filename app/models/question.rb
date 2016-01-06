@@ -1,6 +1,7 @@
 class Question < ActiveRecord::Base
 
   enum status: [:waitting, :accepted]
+  enum question_type: [:single_choice, :multiple_choice, :text]
 
   has_many :options, dependent: :destroy
   belongs_to :subject

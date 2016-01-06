@@ -13,6 +13,7 @@ en:
     create_exam_failed: "Create exam failed"
     save_question: "Your answer sheet has been submitted"
     save_question_failed: "Failed save "
+    access_denied: "Access denied!"
   static_page:
     home:
       welcome: "Welcome to the FTS49 system"
@@ -81,15 +82,18 @@ en:
     remove: "remove"
     add_option: "Add more options"
     sugesst: "Sugesst"
+    update: "Update"
     answer: "answer"
     stt: "STT"
     question: "Question"
     subject: "Subject"
     type: "Type"
     state: "State"
+    edit_question: "Edit Question"
     sugesst_question: "Suggest Question"
     notice:
       create_success: "Create Question Success"
+      delete_success: "Delete Success"
     type:
       single_choice: "Single choice"
       multiple_choice: "Multiple choice"

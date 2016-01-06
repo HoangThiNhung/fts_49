@@ -39,9 +39,19 @@ input[type="submit"] {
   width: 150px;
 }
 
+.edit-button {
+  margin-top: 10px;
+}
+
 #answer-field {
   display: none;
   textarea {
   width: 730px;
+  }
+}
+
+#text-field {
+  textarea {
+    width: 730px;
   }
 }

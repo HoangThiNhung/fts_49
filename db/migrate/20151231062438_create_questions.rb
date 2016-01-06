@@ -3,7 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.string :content
       t.integer :status, default: Question.statuses[:waitting]
-      t.string :question_type
+      t.integer :question_type
       t.references :user
       t.references :subject
       t.timestamps null: false

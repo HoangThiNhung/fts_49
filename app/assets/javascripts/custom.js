@@ -12,12 +12,12 @@ function remove_option(){
 }
 
 $(document).on("change", "#question_question_type", function() {
-  if($(this).val() == 0 || $(this).val() == 1) {
+  if($(this).val() == "single_choice" || $(this).val() == "multiple_choice") {
     $(".add_answ").show();
     $("#options").show();
     $(".is_correct").show();
     $("#answer-field").hide();
-  } else if($(this).val() == 2) {
+  } else if($(this).val() == "text") {
   	$("#options").hide();
     $(".add_answ").hide();
     $("#answer-field").show()

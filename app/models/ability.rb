@@ -8,7 +8,7 @@ class Ability
     else
       can :manage, Question, user_id: user.id
       can [:create, :read, :update], Exam, user_id: user.id
-      can :update, User, id: user.id
+      can [:show, :update], User, id: user.id
       can :read, Subject
     end
   end

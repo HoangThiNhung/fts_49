@@ -6,14 +6,16 @@
         <td><%= t "question.content" %></td>
         <td><%= @question.content %></td>
       </tr>
-      <tr>
-        <td><%= t "question.options" %></td>
-        <td>
-          <% if @options.any? %>
-            <%= render @options %>
-          <% end %>
-        </td>
-      </tr>
+      <% if can? :read, @question %>
+        <tr>
+          <td><%= t "question.options" %></td>
+          <td>
+            <% if @options.any? %>
+              <%= render @options %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
       <tr>
         <td><%= t "question.subject" %></td>
         <td><%= @question.subject.name %> </td>
@@ -33,7 +35,9 @@
         </td>
       </tr>
     </table>
-    <%= link_to t("action.edit"), "#", class: "btn btn-primary" %>
-    <%= link_to t("action.delete"), "#", class: "btn btn-danger" %>
+    <% if can? :update, @question %>
+      <%= link_to t("action.edit"), edit_question_path(@question), class: "btn btn-primary" %>
+      <%= link_to t("action.delete"), question_path(@question), class: "btn btn-danger" %>
+    <% end %>
   </div>
 </div>

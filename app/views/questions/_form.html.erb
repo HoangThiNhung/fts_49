@@ -13,7 +13,7 @@
   <div class="field">
     <%= f.label :question_type %>
     <%= f.select :question_type,
-      options_for_select(Settings.questions.type, params[:question_type]),
+      options_for_select(Question.question_types.keys.to_a, params[:question_type]),
       {}, {class: "form-control question-type"} %>
   </div>
   <div id ="option_field">
