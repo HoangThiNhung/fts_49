@@ -3,7 +3,7 @@ class Ability
 
   def initialize user
     user ||= User.new
-    if user.admin?
+    if user.admin
       can :manage, :all
     else
       can :manage, Question, user_id: user.id

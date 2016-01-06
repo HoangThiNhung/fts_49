@@ -1,4 +1,4 @@
-<% provide :title, t("users.edit") resource_name.to_s.humanize %>
+<% provide :title, t("users.edit") %>
 <h2><%= t "users.edit" %> <%= resource_name.to_s.humanize %></h2>
 
 <div class="col-md-6 col-md-offset-3">
@@ -8,28 +8,35 @@
 
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: "form_control" %>
+      <%= f.email_field :email, autofocus: true, class: "form-control" %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div><%= t "users.current_waiting_confirm" %> <%= resource.unconfirmed_email %></div>
+      <div>
+        <%= t "users.current_waiting_confirm" %>
+        <%= resource.unconfirmed_email %>
+      </div>
     <% end %>
 
     <div class="field">
       <%= f.label :password %> <i>(<%= t "users.leave_blank" %>)</i><br />
-      <%= f.password_field :password, autocomplete: "off", class: "form_control" %>
+      <%= f.password_field :password, autocomplete: "off",
+        class: "form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form_control" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off",
+        class: "form-control" %>
     </div>
 
     <div class="field">
-      <%= f.label :current_password %> <i>(<%= t "users.confirm_current_password" %>)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off", class: "form_control" %>
+      <%= f.label :current_password %>
+      <i>(<%= t "users.confirm_current_password" %>)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off",
+        class: "form-control" %>
     </div>
-
+    <br>
     <div class="actions">
       <%= f.submit t("users.update"), class: "btn btn-primary" %>
     </div>
@@ -39,7 +46,7 @@
 <p>
   <%= t "users.unhappy" %> <%= button_to t("users.cancel_my_account"),
     registration_path(resource_name), data: {confirm: t("users.are_you_sure")},
-    method: :delete %>
+    method: :delete, class: "btn btn-danger" %>
 </p>
 
 <%= link_to t("users.back"), :back %>

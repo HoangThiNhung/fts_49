@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "static_page/about"
   resources :exams
   resources :questions
+  resources :users
 end

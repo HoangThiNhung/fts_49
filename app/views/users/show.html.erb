@@ -1,0 +1,17 @@
+<% provide :title, current_user.name %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table panel panel-default">
+      <tr>
+        <td><%= t "users.name" %></td>
+        <td><%= t "users.email" %></td>
+        <td><%= t "users.exam" %></td>
+      </tr>
+      <tr>
+        <td><%= current_user.name %></td>
+        <td><%= current_user.email %></td>
+        <td><%= current_user.exams.size %></td>
+      </tr>
+    </table>
+  </div>
+</div>
