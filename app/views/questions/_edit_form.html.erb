@@ -1,0 +1,44 @@
+<%= form_for @question do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <%= f.label :subject_id %>
+    <%= select_tag :subject_id,
+      options_from_collection_for_select(@subjects, :id, :name,
+       @question.subject.id), name: "question[subject_id]", class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :question_type %>
+    <%= f.select :question_type,
+      options_for_select(Question.question_types.keys.to_a, @question.question_type),
+      {}, {class: "form-control question-type"} %>
+  </div>
+  <div id ="option_field">
+    <% if @question.text? %>
+      <%= f.fields_for :options do |answer| %>
+        <div id="text-field">
+          <p>
+            <%= answer.label :content, "answer" %>
+            <div class="col-md-12">
+              <%= answer.text_area :content, class: "form-control" %>
+            </div>
+          </p>
+        </div>
+      <% end %>
+    <% else %>
+      <%= f.fields_for :options do |option| %>
+        <%= render partial: "option", locals: {f: option} %>
+      <% end %>
+      <p class="new_option"></p>
+      <div class="add_answ">
+        <%= add_option t("question.add_option"), f, :options %>
+      </div>
+    <% end %>
+  </div>
+  <div class="edit-button">
+    <%= f.submit t("question.update"), class: "btn btn-primary" %>
+  </div>
+<% end %>
