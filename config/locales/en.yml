@@ -104,3 +104,6 @@ en:
   action:
     edit: "Edit"
     delete: "Delete"
+  admin:
+    questions: "Questions"
+    subjects: "Subjects"

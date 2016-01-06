@@ -37,7 +37,8 @@
     </table>
     <% if can? :update, @question %>
       <%= link_to t("action.edit"), edit_question_path(@question), class: "btn btn-primary" %>
-      <%= link_to t("action.delete"), question_path(@question), class: "btn btn-danger" %>
+      <%= link_to t("action.delete"), question_path(@question),
+      method: "delete", class: "btn btn-danger" %>
     <% end %>
   </div>
 </div>

@@ -1,0 +1,51 @@
+<div class="col-lg-3">
+  <%= render "layouts/side_bar" %>
+</div>
+<div class="col-lg-9">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1><%= t "question.question" %></h1>
+      <%= form_for [:admin, @question] do |f| %>
+        <table class="table">
+          <tr>
+            <td><%= t "question.content" %></td>
+            <td><%= @question.content %></td>
+          </tr>
+          <% if can? :read, @question %>
+            <tr>
+              <td><%= t "question.options" %></td>
+              <td>
+                <% if @options.any? %>
+                  <%= render @options %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+          <tr>
+            <td><%= t "question.subject" %></td>
+            <td><%= @question.subject.name %> </td>
+          </tr>
+          <tr>
+            <td><%= t "questions.type" %></td>
+            <td><%= @question.question_type %></td>
+          </tr>
+          <tr>
+            <td><%= t "question.state" %></td>
+            <td>
+              <div class="field">
+                <%= f.select :status,
+                  options_for_select(Question.statuses.keys.to_a, @question.status),
+                  {}, {class: "form-control"} %>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <% if can? :update, @question %>
+          <%= f.submit t("question.update"), class: "btn btn-primary" %>
+          <%= link_to t("action.delete"), admin_question_path(@question),
+            method: "delete", class: "btn btn-danger" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

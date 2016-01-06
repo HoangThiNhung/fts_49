@@ -1,0 +1,12 @@
+<tr>
+  <td><%= question.id %></td>
+  <td><%= link_to question.content, admin_question_path(question.id) %></td>
+  <td><%= question.subject.name %></td>
+  <td><%= question.question_type %>
+  </td>
+  <td><%= question.status %></td>
+  <td>
+    <%= link_to t("action.delete"), admin_question_path(question.id),
+     method: "delete" %>
+  </td>
+</tr>

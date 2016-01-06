@@ -1,0 +1,31 @@
+<div class="col-lg-3">
+  <%= render "layouts/side_bar" %>
+</div>
+  <div class="col-lg-9">
+  <div class="row" id="question">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>
+        <b><%= t "suggested_question" %></b>
+        <%= link_to new_admin_question_path, class: "pull-right" do %>
+          <span class="glyphicon glyphicon-plus"></span>
+          <%= t "questions.new" %>
+        <% end %>
+      </h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="number_id"><%= t "question.stt" %></th>
+            <th class="content"><%= t "question.question" %></th>
+            <th class="subject"><%= t "question.subject" %></th>
+            <th class="type"><%= t "questions.type" %></th>
+            <th class="state"><%= t "question.state" %></th>
+            <th class="action"></th>
+          </tr>
+          <%= render @questions %>
+        </thead>
+      </table>
+      <%= paginate @questions %><br>
+      <%= page_entries_info @questions %>
+    </div>
+  </div>
+</div>
