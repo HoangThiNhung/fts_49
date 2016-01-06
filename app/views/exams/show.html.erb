@@ -1,3 +1,4 @@
+<% provide :title, @exam.subject.name %>
 <div class="row">
   <p><%= @exam.created_at %></p>
   <% if @exam.checked? %>

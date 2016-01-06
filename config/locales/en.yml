@@ -23,6 +23,8 @@ en:
       welcome: "Welcome to the FTS49 system"
       about_info: "Please contact with me"
   users:
+    profile: "Profile"
+    change: "Change Infor"
     log_in : "Log in"
     sign_in: "Sign In"
     sign_in_with: "Sign in with"
@@ -46,6 +48,9 @@ en:
     current_waiting_confirm: "Currently waiting confirmation for:"
     not_receive_email: "Didn't receive confirmation instructions?"
     not_receive_unlock: "Didn't receive unlock instructions?"
+    name: "Name"
+    email: "Email"
+    exam: "Number of Exam"
   exams:
     index:
       title: "Examination List"
