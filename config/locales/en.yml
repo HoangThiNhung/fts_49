@@ -79,6 +79,7 @@ en:
       correct: "Correct answer"
       wrong: "Wrong answer"
       result: "Exam result :"
+      checked: "Accepted"
   subjects:
     edit: "Edit Subject"
     new_subject: "New Subject"
