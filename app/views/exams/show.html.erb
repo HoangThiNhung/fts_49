@@ -25,6 +25,8 @@
         <%= f.submit t(".save"), class: "btn btn-danger col-md-3 pull-left" %>
         <%= f.submit t(".finish"), class: "btn btn-primary col-md-3 pull-right",
           id: "finish" %>
+      <% elsif @exam.unchecked? && current_user.admin %>
+        <%= f.submit t(".checked"), class: "btn btn-danger" %>
       <% end %>
     <% end %>
   </div>

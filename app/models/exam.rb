@@ -1,5 +1,6 @@
 class Exam < ActiveRecord::Base
   enum status: [:start, :testing, :unchecked, :checked]
+  UPDATE_STATUS = {finish: 2, accepted: 3}
 
   belongs_to :subject
   belongs_to :user
@@ -15,6 +16,12 @@ class Exam < ActiveRecord::Base
   before_validation :set_number_of_question
 
   accepts_nested_attributes_for :results
+
+  UPDATE_STATUS.each do |key, value|
+    define_method "#{key}" do
+      update_attributes status: value
+    end
+  end
 
   private
   def add_questions

@@ -30,13 +30,17 @@ class ExamsController < ApplicationController
 
   def update
     @exam.time_end = Time.now.to_i
-    @exam.status = :unchecked if params[:commit] == "Finish"
+    @exam.send params[:commit].downcase
     if @exam.update_attributes exam_params
       flash[:success] = t "flash.save_question"
     else
       flash[:danger] =  t "flash.save_question_failed"
     end
-    redirect_to exams_path
+    if current_user.admin
+      redirect_to admin_root_url
+    else
+      redirect_to exams_path
+    end
   end
 
   private
