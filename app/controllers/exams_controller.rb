@@ -37,7 +37,7 @@ class ExamsController < ApplicationController
       flash[:danger] =  t "flash.save_question_failed"
     end
     if current_user.admin
-      redirect_to admin_root_url
+      redirect_to admin_exams_path
     else
       redirect_to exams_path
     end

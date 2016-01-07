@@ -1,0 +1,51 @@
+<h1><%= t "admin.exams.title" %></h1>
+<div class="row">
+  <table class="table">
+    <tr>
+      <td><%= t "exams.subject" %></td>
+      <td><%= t "exams.user" %></td>
+      <td><%= t "exams.status" %></td>
+      <td><%= t "exams.scope" %></td>
+      <td><%= t "exams.timer" %></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <% @exams.each do |exam| %>
+      <tr>
+        <td><%= exam.subject.name %></td>
+        <td><%= exam.user.name %></td>
+        <td><span class="label label-primary"><%= exam.status %></span></td>
+        <td>
+          <% if exam.start? or exam.unchecked? %>
+            -
+          <% elsif exam.testing? %>
+            0/<%= exam.questions.size %>
+          <% else %>
+            <%= exam.results.correct_answer.size %>/<%= exam.questions.size %>
+          <% end %>
+        </td>
+        <td>
+          <% if exam.start? or exam.time_end.nil? %>
+            00:00:00
+          <% else %>
+            <%= convert_time exam %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to t("exams.view"), exam, class: "btn btn-primary" %>
+        </td>
+        <td>
+          <% if exam.unchecked? %>
+            <%= form_for exam  do |f| %>
+              <%= f.hidden_field :status, value: :checked %>
+              <%= f.submit t("admin.exams.accepted"),
+                class: "btn btn-danger" %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<%= paginate @exams %><br>
+<%= page_entries_info @exams %>
