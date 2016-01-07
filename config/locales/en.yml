@@ -146,4 +146,11 @@ en:
       view: "View"
       accepted: "Accepted"
       timer: "Time"
-
+  email:
+    exam_subject: "Subject name"
+    exam_result: "[Exam result]"
+    hi: "Hi"
+    thanks_for_complete: "Thanks for completing"
+    at: "at"
+    your_score: "your score"
+    hope_paticipate: "We hope you will continuously paticipate another exam in the future"

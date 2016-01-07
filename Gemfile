@@ -13,11 +13,16 @@ gem "config"
 gem "kaminari", "~> 0.16.1"
 gem "cancancan", "~> 1.10"
 gem "ransack"
+gem "sidekiq"
+gem "redis-rails"
+gem "sinatra", ">= 1.3.0", require: nil
 
 group :development, :test do
   gem "factory_girl_rails"
   gem "faker"
   gem "rspec-rails"
+  gem "letter_opener"
+  gem "launchy"
   gem "sqlite3"
   gem "byebug"
 end

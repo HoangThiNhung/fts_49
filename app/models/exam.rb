@@ -1,4 +1,6 @@
 class Exam < ActiveRecord::Base
+  after_update :send_email_result_exam
+
   enum status: [:start, :testing, :unchecked, :checked]
   UPDATE_STATUS = {finish: 2, accepted: 3}
 
@@ -35,5 +37,9 @@ class Exam < ActiveRecord::Base
     else
       self.number_question = subject.questions.size
     end
+  end
+
+  def send_email_result_exam
+    HardWorker.perform_async self.id if self.checked?
   end
 end
