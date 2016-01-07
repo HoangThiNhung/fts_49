@@ -1,0 +1,4 @@
+<%= search_form_for [:admin, @q] do |f| %>
+  <%= f.search_field :content_or_subject_name_cont,
+    class: "form-control", placeholder: t("admin.find_content_or_subject") %>
+<% end %>

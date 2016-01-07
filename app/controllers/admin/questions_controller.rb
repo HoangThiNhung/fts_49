@@ -2,7 +2,10 @@ class Admin::QuestionsController < Admin::BaseController
   before_action :load_subjects, except: [:index, :destroy]
   
   def index
-    @questions = @questions.page(params[:page]).per 10
+    @q = Question.ransack params[:q]
+    option = params[:option].nil? ? Settings.questions.filter.all : params[:option]
+    @questions = @q.result.includes(:subject).send(option).page(params[:page])
+      .per Settings.questions.paginate
   end
   
   def show
