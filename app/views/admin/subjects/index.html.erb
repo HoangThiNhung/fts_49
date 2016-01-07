@@ -2,10 +2,17 @@
 <table class="table">
   <tr>
     <td><%= t ".name" %></td>
+    <td></td>
   </tr>
   <% @subjects.each do |subject| %>
     <tr>
       <td><%= subject.name %></td>
+      <td>
+        <%= link_to t(".edit"), edit_admin_subject_path(subject),
+          class: "btn btn-primary" %>
+        <%= link_to t(".delete"), admin_subject_path(subject),
+          method: :delete, class: "btn btn-danger"  %>
+      </td>
     </tr>
   <% end %>
 </table>

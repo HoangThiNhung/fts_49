@@ -16,6 +16,10 @@ en:
     access_denied: "Access denied!"
     subject_success: "Create subject success"
     subject_failed: "Create subject failed"
+    subject_update_success: "Update successful"
+    subject_update_failed: "Update failed"
+    sub_delete_success: "Subject has removed "
+    sub_delete_failed: "Failed to delete subject"
   static_page:
     home:
       welcome: "Welcome to the FTS49 system"
@@ -76,6 +80,7 @@ en:
       wrong: "Wrong answer"
       result: "Exam result :"
   subjects:
+    edit: "Edit Subject"
     new_subject: "New Subject"
     new:
       title: "Create Subject"
@@ -83,6 +88,8 @@ en:
     index:
       title: "All Subject"
       name: "Name"
+      edit: "Edit"
+      delete: "Delete"
   question:
     content: "content"
     options: "options"
