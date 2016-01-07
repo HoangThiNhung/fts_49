@@ -1,0 +1,30 @@
+<div id="options">
+  <%= f.label :content, t("options") %>
+  <div class="row">
+    <div class="col-md-7">
+      <%= f.text_field :content, class: "form_control" %>
+    </div>
+    <div class="is_correct">
+      <div class="col-md-3">
+        <%= f.label :is_correct, class: "checkbox inline" do %>
+          <%= f.check_box :is_correct, class: "checkbox_left" %>
+          <span><%= t "questions.correct_answer" %></span>
+        <% end %>
+      </div>
+      <div class="remove-option">
+        <div class="col-md-2">
+          <%= remove_option t("question.remove"), f %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="answer-field">
+  <%= f.label :content, t("question.answer") %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.text_area :content, class: "form-control", name: "question[options_attributes][1000][content]" %>
+      <%= f.hidden_field :is_correct, value: :true, name: "question[options_attributes][1000][is_correct]" %>
+    </div>
+  </div>
+</div>

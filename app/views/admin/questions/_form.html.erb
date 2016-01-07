@@ -1,0 +1,34 @@
+<%= form_for [:admin, @question] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <%= f.label :subject_id %>
+    <%= select_tag :subject_id,
+      options_from_collection_for_select(@subjects, :id, :name,
+      params[:subject_id]), name: "question[subject_id]", class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :question_type %>
+    <%= f.select :question_type,
+      options_for_select(Question.question_types.keys.to_a, params[:question_type]),
+      {}, {class: "form-control question-type"} %>
+  </div>
+  <div id ="option_field">
+    <%= f.fields_for :options do |builder| %>
+      <p>
+        <%= render "option_fields", f: builder %>
+      </p>
+    <% end %>
+    <p class="new_option"></p>
+  </div>
+  <div class="add_answ">
+    <%= add_option t("question.add_option"),
+      f, :options %>
+  </div>
+  <div class="sugesst">
+    <%= f.submit t("question.sugesst"), class: "btn btn-primary" %>
+  </div>
+<% end %>

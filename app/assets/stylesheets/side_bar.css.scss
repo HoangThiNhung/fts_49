@@ -1,0 +1,18 @@
+.left-side-bar{
+  background-color: #E1E3E1;
+  height: 620px;
+  width: 260px;
+  position: fixed;
+  margin-left: -100px;
+  margin-top: -10px;
+  top: 61px;
+  .menus {
+    list-style: none;
+    margin: 0;
+    li {
+      overflow: auto;
+      padding: 10px 0;
+      border-bottom: 1px solid #eaeaea;
+    }
+  }
+}

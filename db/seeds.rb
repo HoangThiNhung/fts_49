@@ -5,11 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-10.times do |n|
+@admin = User.create!(name: "Framgia Vietnam", email: "admin@framgia.com",
+  password: "123456", admin: true)
+
+5.times do |n|
   @user = FactoryGirl.create(:user)
   @subject = FactoryGirl.create(:subject)
-  @question = FactoryGirl.create(:question, user: @user, subject: @subject)
-  3.times do |n|
-    FactoryGirl.create(:option,question: @question)
+  10.times do |n|
+    @question = FactoryGirl.create(:question, user: @admin, subject: @subject)
+    3.times do |n|
+      FactoryGirl.create(:option, question: @question)
+    end
+    FactoryGirl.create(:option, question: @question, is_correct: true)
   end
 end

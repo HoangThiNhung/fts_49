@@ -1,0 +1,8 @@
+<p>
+  <% if option.is_correct? %>
+   <p class="btn btn-primary"><%= t "question.correct" %></p>
+  <% else %>
+    <p class="btn btn-danger"><%= t "question.wrong" %></p>
+  <% end %>
+  <%= option.content %>
+<p>

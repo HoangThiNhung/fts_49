@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   resources :exams
   resources :questions
   resources :users
+
+  namespace :admin do
+    root "questions#index"
+    resources :questions
+  end
 end
