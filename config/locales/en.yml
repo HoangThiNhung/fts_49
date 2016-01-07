@@ -137,3 +137,13 @@ en:
       admin: "Admin"
       user: "User"
       find_name_or_email: "Find name or email"
+    exams:
+      title: "Show all exam"
+      subject: "Subject"
+      user: "User"
+      status: "Status"
+      scope: "Scope"
+      view: "View"
+      accepted: "Accepted"
+      timer: "Time"
+
