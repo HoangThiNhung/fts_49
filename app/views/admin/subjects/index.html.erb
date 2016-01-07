@@ -1,0 +1,13 @@
+<h1><%= t "subjects.index.title" %></h1>
+<table class="table">
+  <tr>
+    <td><%= t ".name" %></td>
+  </tr>
+  <% @subjects.each do |subject| %>
+    <tr>
+      <td><%= subject.name %></td>
+    </tr>
+  <% end %>
+</table>
+<%= paginate @subjects %><br>
+<%= page_entries_info @subjects %>
