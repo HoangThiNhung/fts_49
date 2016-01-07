@@ -1,0 +1,21 @@
+<tr>
+  <td><%= user.id %></td>
+  <td><%= link_to user.name, admin_user_path(user.id) %></td>
+  <td><%= user.email %></td>
+  <td>
+    <% if user.admin? %>
+      <div class="role-admin">
+        <%= t "admin.users.admin" %>
+      </div>
+    <% else %>
+      <div class="role-user">
+        <%= t "admin.users.user" %>
+      </div>
+    <% end %>
+  </td>
+  <td><%= user.created_at.strftime("%h %e, %Y") %></td>
+  <td>
+    <%= link_to t("action.view"), admin_user_path(user.id),
+     class: "btn btn-info" %>
+  </td>
+</tr>

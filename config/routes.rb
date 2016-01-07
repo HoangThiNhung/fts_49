@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     root "questions#index"
     resources :questions
     resources :subjects
+    resources :users, only: [:index, :show]
   end
 end

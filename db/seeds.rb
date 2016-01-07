@@ -9,7 +9,7 @@
   password: "123456", admin: true)
 
 5.times do |n|
-  @user = FactoryGirl.create(:user)
+  @user = FactoryGirl.create(:user, admin: false)
   @subject = FactoryGirl.create(:subject)
   10.times do |n|
     @question = FactoryGirl.create(:question, user: @admin, subject: @subject)

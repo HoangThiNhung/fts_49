@@ -3,3 +3,8 @@ questions:
     single_choice: "single_choice"
     multiple_choice: "multiple_choice"
     text: "text"
+  filter:
+    all: "all"
+  paginate: 10
+users:
+  paginate: 10

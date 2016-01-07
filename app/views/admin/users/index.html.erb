@@ -1,0 +1,30 @@
+<div class="col-lg-3">
+  <%= render "layouts/side_bar" %>
+</div>
+  <div class="col-lg-9">
+  <div class="row" id="question">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>
+        <b><%= t "admin.users.manage_user" %></b>
+      </h2>
+      <%= render "search_form" %>
+      <br>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="number_id"><%= t "admin.users.stt" %></th>
+            <th class="name"><%= t "admin.users.name" %></th>
+            <th class="email"><%= t "admin.users.email" %></th>
+            <th class="Role"><%= t "admin.users.role" %></th>
+            <th class="join-date"><%= t "admin.users.join_date" %></th>
+            <th class="action"></th>
+          </tr>
+          <%= render @users %>
+        </thead>
+      </table>
+      <%= paginate @users %><br>
+      <%= page_entries_info @users %>
+    </div>
+  </div>
+</div>

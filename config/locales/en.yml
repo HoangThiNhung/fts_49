@@ -121,6 +121,18 @@ en:
   action:
     edit: "Edit"
     delete: "Delete"
+    view: "View"
   admin:
     questions: "Questions"
+    find_content_or_subject: "Find contents or subjects"
     subjects: "Subjects"
+    users:
+      manage_user: "Manage Users"
+      stt: "STT"
+      name: "Name"
+      email: "Email"
+      role: "Role"
+      join_date: "Join Date"
+      admin: "Admin"
+      user: "User"
+      find_name_or_email: "Find name or email"
