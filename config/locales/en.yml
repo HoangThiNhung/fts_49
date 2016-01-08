@@ -146,9 +146,18 @@ en:
       view: "View"
       accepted: "Accepted"
       timer: "Time"
+    logs:
+      name:  "Name"
+      action: "Action"
+      time: "time"
+      see_log: "View Logs"
+      log_in: "Log in"
+      log_out: "Log out"
   email:
     exam_subject: "Subject name"
     exam_result: "[Exam result]"
+    exam_delayed: "[Exam delayed]"
+    exam_statistic: "[Notify statistic exam this month]"
     hi: "Hi"
     thanks_for_complete: "Thanks for completing"
     at: "at"
@@ -159,11 +168,5 @@ en:
       has_new_sub: "We have a new subject:"
       visit: "You can visit and test with new subject now"
       thanks: "Thank you"
-    logs:
-      name:  "Name"
-      action: "Action"
-      time: "time"
-      see_log: "View Logs"
-      log_in: "Log in"
-      log_out: "Log out"
-
+    your_exam_in: "Your exam in"
+    is_delay: "is delayed"

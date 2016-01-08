@@ -1,5 +1,6 @@
 class Exam < ActiveRecord::Base
   after_update :send_email_result_exam
+  after_create :send_notify_delay_exam
 
   enum status: [:start, :testing, :unchecked, :checked]
   UPDATE_STATUS = {finish: 2, accepted: 3}
@@ -41,5 +42,16 @@ class Exam < ActiveRecord::Base
 
   def send_email_result_exam
     HardWorker.perform_async self.id if self.checked?
+  end
+
+  def send_notify_delay_exam
+    UserMailer.notify_delay(self).deliver_now
+  end
+  handle_asynchronously :send_notify_delay_exam, run_at: Proc.new {8.hours.from_now}
+
+  def self.send_statistic_every_month
+    Exam.all do |exam|
+      UserMailer.send_statistic_every_month(exam).deliver_now
+    end
   end
 end
