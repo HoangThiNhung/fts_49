@@ -8,6 +8,7 @@ class Admin::SubjectsController < Admin::BaseController
 
   def create
     if @subject.save
+      NotifyNewSubject.new.notify @subject
       flash[:success] = t "flash.subject_success"
       redirect_to admin_subjects_path
     else
