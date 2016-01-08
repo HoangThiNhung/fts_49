@@ -19,6 +19,7 @@ gem "sinatra", ">= 1.3.0", require: nil
 gem "whenever", require: false
 gem "delayed_job_active_record"
 gem "paranoia", "~> 2.0"
+gem "friendly_id"
 
 group :development, :test do
   gem "factory_girl_rails"
