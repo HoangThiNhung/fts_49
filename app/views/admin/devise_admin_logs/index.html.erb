@@ -1,0 +1,19 @@
+<h1><%= %></h1>
+<div class="row">
+  <table class="table">
+    <tr>
+      <td><%= t "logs.name" %></td>
+      <td><%= t "logs.action" %></td>
+      <td><%= t "logs.time" %></td>
+    </tr>
+    <% @devise_admin_logs.each do |log| %>
+      <tr>
+        <td><%= log.user.name %></td>
+        <td><%= log.action %></td>
+        <td><%= log.created_at %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<%= paginate @devise_admin_logs %><br>
+<%= page_entries_info @devise_admin_logs %>

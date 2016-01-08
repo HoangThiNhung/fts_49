@@ -154,3 +154,10 @@ en:
     at: "at"
     your_score: "your score"
     hope_paticipate: "We hope you will continuously paticipate another exam in the future"
+    logs:
+      name:  "Name"
+      action: "Action"
+      time: "time"
+      see_log: "View Logs"
+      log_in: "Log in"
+      log_out: "Log out"
