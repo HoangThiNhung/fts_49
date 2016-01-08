@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108040334) do
+ActiveRecord::Schema.define(version: 20160108084517) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -64,7 +64,10 @@ ActiveRecord::Schema.define(version: 20160108040334) do
     t.integer  "subject_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.datetime "deleted_at"
   end
+
+  add_index "questions", ["deleted_at"], name: "index_questions_on_deleted_at"
 
   create_table "results", force: :cascade do |t|
     t.integer  "exam_id"
