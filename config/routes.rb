@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :questions
   resources :users
 
+  require "sidekiq/web"
+  mount Sidekiq::Web => "/sidekiq"
+
   namespace :admin do
     root "questions#index"
     resources :questions

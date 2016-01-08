@@ -1,0 +1,6 @@
+<em> <%= t "email.hi" %> <%= @exam.user.name %>
+<p> <%= t "thanks_for_complete" %> <strong> <%= @exam.subject.name %> </strong>
+  <%= t "email.exam" %> <%= t "email.at" %> <%= @exam.updated_at %>
+</p>
+<p> <%= t "email.your_score" %>: <strong><%= @exam.results.correct_answer.size %></strong> </p>
+<p> <%= t "email.hope_paticipate" %> </p>
