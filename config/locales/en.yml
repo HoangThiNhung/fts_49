@@ -154,6 +154,11 @@ en:
     at: "at"
     your_score: "your score"
     hope_paticipate: "We hope you will continuously paticipate another exam in the future"
+    new_subject: "New subject for FTS49"
+    new_sub:
+      has_new_sub: "We have a new subject:"
+      visit: "You can visit and test with new subject now"
+      thanks: "Thank you"
     logs:
       name:  "Name"
       action: "Action"
@@ -161,3 +166,4 @@ en:
       see_log: "View Logs"
       log_in: "Log in"
       log_out: "Log out"
+
