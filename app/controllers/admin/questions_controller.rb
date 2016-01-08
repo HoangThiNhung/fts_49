@@ -2,7 +2,7 @@ class Admin::QuestionsController < Admin::BaseController
   before_action :load_subjects, except: [:index, :destroy]
   
   def index
-    @q = Question.ransack params[:q]
+    @q = Question.with_deleted.ransack params[:q]
     option = params[:option].nil? ? Settings.questions.filter.all : params[:option]
     @questions = @q.result.includes(:subject).send(option).page(params[:page])
       .per Settings.questions.paginate
@@ -36,7 +36,7 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def destroy
-    @question.destroy
+    @question.really_destroy!
     flash[:success] = t "question.notice.delete_success"
     redirect_to admin_questions_path
   end
