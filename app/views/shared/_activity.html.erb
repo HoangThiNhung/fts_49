@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <h1><%= current_user.name %><%= t "users.activities" %></h1>
+  <div class="panel-body">
+    <div class="col-md-8 col-md-offset-2">
+      <ul class="list-group">
+        <%= render_activities @activities %>
+      </ul>
+      <div class="text-center">
+        <%= paginate @activities %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<li class="list-group-item">
+  <span class="glyphicon glyphicon-plus"></span>
+  <strong><%= activity.owner.name %></strong>
+  <% if a.trackable %>
+    <em><%= t "users.question_created" %></em>
+    <%= link_to t("Question #{a.trackable.id}"), exam_path(a.trackable) %>
+    <%= t "users.in" %> <%= link_to a.trackable.subject.name, exam_path(a.trackable) %>.
+    <br>
+    <%= a.updated_at %>
+  <% else %>
+    <%= t "users.question_error" %>
+    <% end %>
+</li>

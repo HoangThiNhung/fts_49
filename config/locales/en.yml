@@ -58,6 +58,15 @@ en:
     name: "Name"
     email: "Email"
     exam: "Number of Exam"
+    exam_resolved: "has been resolved"
+    exam_created: "was created exam"
+    exam_error: "Exam has been deleted!"
+    question_created: "was created a question"
+    question_updated: "was updated a question"
+    question_error: "Question has been deleted!"
+    question_deleted: "was deleted a question"
+    in: "in"
+    activities: "'s activities"
   exams:
     index:
       title: "Examination List"
