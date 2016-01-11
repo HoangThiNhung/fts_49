@@ -1,4 +1,7 @@
 class Exam < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked owner: proc{|controller, model| controller.current_user }
+
   after_update :send_email_result_exam
   after_create :send_notify_delay_exam
 

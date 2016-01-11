@@ -8,3 +8,5 @@ questions:
   paginate: 10
 users:
   paginate: 10
+activities:
+  paginate: 10
