@@ -21,6 +21,7 @@ gem "delayed_job_active_record"
 gem "paranoia", "~> 2.0"
 gem "friendly_id"
 gem "public_activity"
+gem "shareable"
 
 group :development, :test do
   gem "factory_girl_rails"
