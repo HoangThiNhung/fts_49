@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {registrations: "registrations",
-    sessions: "sessions"}
+  devise_for :users, :controllers => {omniauth_callbacks: "omniauth_callbacks",
+    registrations: "registrations", sessions: "sessions"}
   root "static_page#home"
   get "static_page/about"
   resources :exams
   resources :questions
-  resources :users
+  resources :users, only: [:show]
 
   require "sidekiq/web"
   mount Sidekiq::Web => "/sidekiq"

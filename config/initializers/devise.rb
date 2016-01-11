@@ -1,3 +1,4 @@
+require "omniauth-google-oauth2"
 Devise.setup do |config|
   config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
@@ -19,6 +20,12 @@ Devise.setup do |config|
 
   config.reset_password_within = 6.hours
 
-  config.sign_out_via = :delete
+  require "devise/orm/active_record"
+
+  config.sign_out_via = :get
+  config.omniauth :facebook, ENV["FACEBOOK_KEY"], ENV["FACEBOOK_SECRET"],
+    {scope: "email",
+    client_options: {ssl: {ca_file: "/usr/lib/ssl/certs/ca-certificates.crt"}}}
+  config.omniauth :google_oauth2, ENV["GOOGLE_KEY"], ENV["GOOGLE_SECRET"], {}
 
 end
