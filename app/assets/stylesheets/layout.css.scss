@@ -1,0 +1,19 @@
+.navbar-inverse {
+  background-color: #F8F8F8 !important;
+  border-color: #E7E7E7 !important;
+  .navbar-right {
+    li {
+      a {
+        color: #777 !important;
+        &:hover {
+          color: #333 !important;
+          text-decoration: none !important;
+        }
+      }
+    }
+  }
+}
+
+a #logo {
+  color: #333 !important;
+}
