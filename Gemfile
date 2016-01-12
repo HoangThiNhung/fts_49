@@ -26,10 +26,10 @@ gem "omniauth"
 gem "omniauth-oauth2"
 gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
+gem "faker"
 
 group :development, :test do
   gem "factory_girl_rails"
-  gem "faker"
   gem "rspec-rails"
   gem "letter_opener"
   gem "launchy"
@@ -42,3 +42,8 @@ group :development do
   gem "spring"
 end
 
+group :production do
+  gem "pg", "0.17.1"
+  gem "rails_12factor", "0.0.2"
+  gem "puma", "2.11.1"
+end
