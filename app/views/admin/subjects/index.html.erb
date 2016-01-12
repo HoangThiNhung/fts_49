@@ -1,20 +1,32 @@
-<h1><%= t "subjects.index.title" %></h1>
-<table class="table">
-  <tr>
-    <td><%= t ".name" %></td>
-    <td></td>
-  </tr>
-  <% @subjects.each do |subject| %>
+<% provide :title, t("subjects.index.title") %>
+<div class="col-lg-3">
+  <%= render "layouts/side_bar" %>
+</div>
+<div class="col-lg-9">
+  <h1><%= t "subjects.index.title" %></h1>
+  <h2>
+    <%= link_to new_admin_subject_path, class: "pull-right" do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      <%= t "questions.new" %>
+    <% end %>
+  </h2>
+  <table class="table">
     <tr>
-      <td><%= subject.name %></td>
-      <td>
-        <%= link_to t(".edit"), edit_admin_subject_path(subject),
-          class: "btn btn-primary" %>
-        <%= link_to t(".delete"), admin_subject_path(subject),
-          method: :delete, class: "btn btn-danger"  %>
-      </td>
+      <td><%= t ".name" %></td>
+      <td></td>
     </tr>
-  <% end %>
-</table>
-<%= paginate @subjects %><br>
-<%= page_entries_info @subjects %>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.name %></td>
+        <td>
+          <%= link_to t(".edit"), edit_admin_subject_path(subject),
+            class: "btn btn-primary" %>
+          <%= link_to t(".delete"), admin_subject_path(subject),
+            method: :delete, class: "btn btn-danger"  %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= paginate @subjects %><br>
+  <%= page_entries_info @subjects %>
+</div>

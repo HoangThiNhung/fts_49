@@ -6,11 +6,15 @@
     </li>
     <li>
       <i class="glyphicon glyphicon-th-list"></i>
-      <%= link_to t("admin.subjects"), admin_root_path %>
+      <%= link_to t("admin.subjects"), admin_subjects_path  %>
     </li>
     <li>
       <i class="glyphicon glyphicon-pencil"></i>
       <%= link_to t("admin.questions"), admin_questions_path %>
+    </li>
+    <li>
+      <i class="glyphicon glyphicon-check"></i>
+      <%= link_to t("admin.exam"), admin_exams_path %>
     </li>
   </ul>
 </div>

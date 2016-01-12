@@ -23,3 +23,17 @@ $(document).on("change", "#question_question_type", function() {
     $("#answer-field").show()
   }
 });
+
+$(document).on("click", ".checkbox_left", function(){
+  question_type = $("#question_question_type").val();
+  checkbox = this;
+  if (question_type == "single_choice"){
+    if (checkbox.checked){
+      $("input.checkbox_left").each(function(){
+        if (checkbox != this) {
+          $(this).prop("checked", false);
+        }
+      });
+    }
+  }
+});

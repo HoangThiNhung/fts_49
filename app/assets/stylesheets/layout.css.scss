@@ -17,3 +17,34 @@
 a #logo {
   color: #333 !important;
 }
+
+.open {
+  a {
+    background-color: #F8F8F8 !important;
+  }
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px #E7E7E7;
+  color: #777;
+  a {
+    color: #777;
+    &:hover {
+      color: #333;
+      text-decoration: none !important;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
