@@ -137,6 +137,7 @@ en:
     view: "View"
   admin:
     questions: "Questions"
+    exam: "Exams"
     add_new_question: "Add new question"
     find_content_or_subject: "Find contents or subjects"
     subjects: "Subjects"
