@@ -1,7 +1,8 @@
+<% provide :title, t("question.question_attribute") %>
 <div class="row" id="question">
   <div class="col-md-10 col-md-offset-1">
     <h2>
-      <b><%= t "suggested_question" %></b>
+      <b><%= t "question.suggested_question" %></b>
       <%= link_to new_question_path, class: "pull-right" do %>
         <span class="glyphicon glyphicon-plus"></span>
         <%= t "questions.new" %>

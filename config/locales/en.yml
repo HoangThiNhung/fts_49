@@ -89,6 +89,7 @@ en:
       wrong: "Wrong answer"
       result: "Exam result :"
       checked: "Accepted"
+    exam: "Exams"
   subjects:
     edit: "Edit Subject"
     new_subject: "New Subject"
@@ -101,6 +102,8 @@ en:
       edit: "Edit"
       delete: "Delete"
   question:
+    suggested_question: "Suggested_question"
+    question_attribute: "Question Attribute"
     content: "content"
     options: "options"
     correct: "correct"
@@ -134,6 +137,7 @@ en:
     view: "View"
   admin:
     questions: "Questions"
+    add_new_question: "Add new question"
     find_content_or_subject: "Find contents or subjects"
     subjects: "Subjects"
     users:
