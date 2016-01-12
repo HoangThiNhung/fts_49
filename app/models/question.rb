@@ -20,6 +20,8 @@ class Question < ActiveRecord::Base
 
   private
   def update_question_as_deleted
-    self.update_attributes status: :deleted
+    unless user.admin?
+      self.update_attributes status: :deleted
+    end
   end
 end
