@@ -18,7 +18,7 @@ $(document).on("change", "#question_question_type", function() {
     $(".is_correct").show();
     $("#answer-field").hide();
   } else if($(this).val() == "text") {
-  	$("#options").hide();
+    $("#options").hide();
     $(".add_answ").hide();
     $("#answer-field").show()
   }

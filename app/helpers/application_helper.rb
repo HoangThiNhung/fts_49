@@ -11,7 +11,7 @@ module ApplicationHelper
   def remove_option name, f
     f.hidden_field(:_destroy) + link_to(name, "#", onclick: "remove_option(this)")
   end
-  
+
   def add_option name, f, association
     new_object = f.object.class.reflect_on_association(association).klass.new
     fields = f.fields_for(association, new_object, child_index: "new_#{association}") do |builder|
