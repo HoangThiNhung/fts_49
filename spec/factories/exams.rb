@@ -1,9 +1,7 @@
 FactoryGirl.define do
-  factory :question do
-    content {Faker::Name.name}
-    status :accepted
-    question_type :single_choice
+  factory :exam do
     user {FactoryGirl.create :user}
     subject {FactoryGirl.create :subject}
+    status :checked
   end
 end

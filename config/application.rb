@@ -13,12 +13,14 @@ module Fts49
     config.active_record.default_timezone = "Asia/Bangkok"
     config.active_job.queue_adapter = :delayed_job
     config.generators do |g|
-      g.fixture_replacement :factory_girl
-    end
-    social_keys = File.join(Rails.root, "config", "social_keys.yml")
-    CONFIG = HashWithIndifferentAccess.new(YAML::load(IO.read(social_keys)))[Rails.env]
-    CONFIG.each do |k,v|
-      ENV[k.upcase] ||= v
+      g.test_framework :rspec,
+        fixtures: true,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false,
+        controller_specs: true,
+        request_specs: true
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
   end
 end
