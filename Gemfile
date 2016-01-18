@@ -31,6 +31,7 @@ gem "faker"
 group :development, :test do
   gem "factory_girl_rails"
   gem "rspec-rails"
+  gem "shoulda-matchers"
   gem "letter_opener"
   gem "launchy"
   gem "sqlite3"
