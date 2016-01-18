@@ -9,8 +9,6 @@ Bundler.require(*Rails.groups)
 module Fts49
   class Application < Rails::Application
     config.active_record.raise_in_transactional_callbacks = true
-    config.time_zone = "Asia/Bangkok"
-    config.active_record.default_timezone = "Asia/Bangkok"
     config.active_job.queue_adapter = :delayed_job
     config.generators do |g|
       g.test_framework :rspec,
