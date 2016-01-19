@@ -257,6 +257,10 @@ GEM
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
       rspec-mocks (~> 3.4.0)
+    rspec-activemodel-mocks (1.0.2)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      rspec-mocks (>= 2.99, < 4.0)
     rspec-collection_matchers (1.1.2)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.4.1)
@@ -366,6 +370,7 @@ DEPENDENCIES
   rails_12factor (= 0.0.2)
   ransack
   redis-rails
+  rspec-activemodel-mocks
   rspec-collection_matchers
   rspec-rails
   sass-rails (~> 5.0)

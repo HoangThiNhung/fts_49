@@ -1,9 +1,11 @@
 require "rails_helper"
+require "rspec/active_model/mocks"
 
 describe "questions/new.html.erb" do
-  let!(:user) {create :user}
-  let!(:question) {create :question}
-  let!(:subject) {create :subject}
+  subject {rendered}
+  let!(:user) {FactoryGirl.build :user}
+  let!(:subject) {FactoryGirl.build :subject}
+  let(:question) {mock_model(Question).as_new_record.as_null_object}
 
   before do
     sign_in user

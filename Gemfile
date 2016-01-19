@@ -32,6 +32,7 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "rspec-rails"
   gem "shoulda-matchers"
+  gem "rspec-activemodel-mocks"
   gem "rspec-collection_matchers"
   gem "guard-rspec"
   gem "capybara"

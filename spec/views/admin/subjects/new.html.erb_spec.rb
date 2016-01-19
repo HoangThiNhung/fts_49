@@ -1,11 +1,13 @@
 require "rails_helper"
+require "rspec/active_model/mocks"
 
 describe "admin/subjects/new.html.erb" do
-  let!(:user) {create :user}
-  let!(:subject) {create :subject}
+  subject {rendered}
+  let!(:admin) {FactoryGirl.build :admin, admin: true}
+  let(:subject) {mock_model(Subject).as_new_record.as_null_object}
 
   before do
-    sign_in user
+    sign_in admin
     assign :subject, subject
     render
   end
